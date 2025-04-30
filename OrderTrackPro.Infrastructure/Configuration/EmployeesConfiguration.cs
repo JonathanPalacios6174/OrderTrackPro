@@ -4,6 +4,8 @@ public class EmployeesConfiguration : IEntityTypeConfiguration<Employees>
 {
     public void Configure(EntityTypeBuilder<Employees> builder)
     {
+        builder.HasKey(e => e.EmployeeId);
+        builder.ToTable("Employees");
         builder.HasIndex(e => e.LastName).HasDatabaseName("LastName");
         builder.HasIndex(e => e.PostalCode).HasDatabaseName("PostalCode");
 

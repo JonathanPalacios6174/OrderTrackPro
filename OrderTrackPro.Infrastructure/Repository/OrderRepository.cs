@@ -12,7 +12,17 @@ namespace OrderTrackPro.Infrastructure.Repository
 
         public async Task<List<Orders>> GetOrdersAsync()
         {
-           return await _context.Orders.AsNoTracking().Take(10).ToListAsync();
+            try
+            {
+                var test = _context.Orders.AsNoTracking().Take(10).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
+            return await _context.Orders.AsNoTracking().Take(10).ToListAsync();
 
         }
     }

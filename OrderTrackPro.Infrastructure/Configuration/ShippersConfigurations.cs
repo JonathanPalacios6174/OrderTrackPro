@@ -5,6 +5,7 @@ public class ShippersConfiguration : IEntityTypeConfiguration<Shippers>
 {
     public void Configure(EntityTypeBuilder<Shippers> builder)
     {
+        builder.HasKey(e => e.ShipperId);
         builder.Property(e => e.ShipperId)
                .HasColumnName("ShipperID");
 

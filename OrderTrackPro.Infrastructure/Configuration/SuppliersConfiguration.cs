@@ -6,6 +6,8 @@ public class SuppliersConfiguration : IEntityTypeConfiguration<Suppliers>
 {
     public void Configure(EntityTypeBuilder<Suppliers> builder)
     {
+        builder.HasKey(e => e.SupplierId);
+
         builder.HasIndex(e => e.CompanyName)
                .HasDatabaseName("CompanyName");
 

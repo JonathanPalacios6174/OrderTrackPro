@@ -5,6 +5,8 @@ public class OrdersConfiguration : IEntityTypeConfiguration<Orders>
 {
     public void Configure(EntityTypeBuilder<Orders> builder)
     {
+        builder.HasKey(e => e.OrderId);
+        builder.ToTable("Orders");
         builder.HasIndex(e => e.CustomerId).HasDatabaseName("CustomerID");
         builder.HasIndex(e => e.CustomerId).HasDatabaseName("CustomersOrders");
         builder.HasIndex(e => e.EmployeeId).HasDatabaseName("EmployeeID");

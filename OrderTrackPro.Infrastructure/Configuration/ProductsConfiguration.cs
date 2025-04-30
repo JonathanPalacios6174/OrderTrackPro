@@ -5,6 +5,7 @@ public class ProductsConfiguration : IEntityTypeConfiguration<Products>
 {
     public void Configure(EntityTypeBuilder<Products> builder)
     {
+        builder.HasKey(e => e.ProductId);
         builder.HasIndex(e => e.CategoryId).HasDatabaseName("CategoriesProducts");
         builder.HasIndex(e => e.CategoryId).HasDatabaseName("CategoryID");
         builder.HasIndex(e => e.ProductName).HasDatabaseName("ProductName");
