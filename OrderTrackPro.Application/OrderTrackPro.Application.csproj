@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OrderTrackPro.Infrastructure\OrderTrackPro.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
