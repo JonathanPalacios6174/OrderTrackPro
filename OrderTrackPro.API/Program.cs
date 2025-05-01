@@ -16,14 +16,27 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<NorthwindContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("OrderTrackProDB")));
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("OrderTrackProDB"),
+        opt => opt.MigrationsAssembly(typeof(NorthwindContext).Assembly.FullName));
+});
 
-builder.Services.AddTransient<IOrderInterfaceService, GetOrdersService>();
+builder.Services.AddTransient<IOrderInterfaceService, OrdersService>();
 
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 
-    
-    var app = builder.Build();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

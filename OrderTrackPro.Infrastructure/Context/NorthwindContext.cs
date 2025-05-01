@@ -4,6 +4,10 @@ namespace OrderTrackPro.Infrastructure.Repositorie;
 
 public partial class NorthwindContext : DbContext
 {
+    public NorthwindContext()
+    {
+                    
+    }
     public NorthwindContext(DbContextOptions<NorthwindContext> options)
         : base(options)
     {
@@ -16,8 +20,6 @@ public partial class NorthwindContext : DbContext
     public virtual DbSet<CustomerDemographic> CustomerDemographics { get; set; }
 
     public virtual DbSet<Employee> Employees { get; set; }
-
-    public virtual DbSet<EmployeeTerritory> EmployeeTerritories { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
@@ -37,6 +39,4 @@ public partial class NorthwindContext : DbContext
     { 
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
-
-   
 }

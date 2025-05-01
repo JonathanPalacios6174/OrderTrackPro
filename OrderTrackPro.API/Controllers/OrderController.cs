@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrderTrackPro.Application.DTOs;
 using OrderTrackPro.Application.Interfaces;
 
 namespace OrderTrackPro.API.Controllers
@@ -18,6 +19,13 @@ namespace OrderTrackPro.API.Controllers
         {
             var orders = await _orderInterfaceService.GetOrdersAsync();
             return Ok(orders);
+        }
+
+        [HttpPost("Create")]
+
+        public async Task<IActionResult> CreateOrder(OrderDTO orderDTO)
+        {
+            return Ok(await _orderInterfaceService.CreateOrder(orderDTO));
         }
     }
 }

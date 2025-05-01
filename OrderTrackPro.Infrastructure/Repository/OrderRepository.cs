@@ -12,18 +12,41 @@ namespace OrderTrackPro.Infrastructure.Repository
 
         public async Task<List<Order>> GetOrdersAsync()
         {
-            try
-            {
-                var test = _context.Orders.AsNoTracking().Take(10).ToListAsync();
-            }
-            catch (Exception ex)
-            {
+            return await _context.Orders.AsNoTracking().ToListAsync();
+        }
 
-                throw;
-            }
-            
-            return await _context.Orders.AsNoTracking().Take(10).ToListAsync();
 
+        public async Task<int> CreateOrder(Order order)
+        {
+            await _context.AddAsync(order);
+
+            var result = await _context.SaveChangesAsync();
+
+            return result > 0 ? order.OrderId : 0;
+        }
+
+
+        public async Task<Order?> GetOrderById(int id)
+        {
+            return await _context.Orders
+                .AsNoTracking()
+                .FirstOrDefaultAsync(d => d.OrderId == id);
+        }
+
+
+        public async Task<int> UpdateOrder(Order order)
+        {
+            _context.Update(order);
+
+            return await _context.SaveChangesAsync();
+        }
+
+
+        public async Task<int> DeleteOrder(Order order)
+        {
+            _context.Remove(order);
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

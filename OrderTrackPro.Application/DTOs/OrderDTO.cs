@@ -1,7 +1,7 @@
 ﻿
 namespace OrderTrackPro.Application.DTOs
 {
-    public class GetOrderDTO
+    public class OrderDTO
     {
         public int OrderId { get; set; }
 
@@ -31,12 +31,6 @@ namespace OrderTrackPro.Application.DTOs
 
         public string ShipCountry { get; set; }
 
-        //public virtual Customers Customer { get; set; }
-
-        //public virtual Employees Employee { get; set; }
-
-        //public virtual ICollection<OrderDetails> OrderDetails { get; set; } = new List<OrderDetails>();
-
-        //public virtual Shippers ShipViaNavigation { get; set; }
+        public List<OrderDetailDto> OrderDetails { get; set; }
     }
 }
