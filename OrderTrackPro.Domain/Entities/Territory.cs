@@ -1,6 +1,6 @@
 ﻿namespace OrderTrackPro.Domain.Entities
 {
-    public class Territories
+    public class Territory
     {
         public string TerritoryId { get; set; }
 
@@ -10,6 +10,6 @@
 
         public virtual Region Region { get; set; }
 
-        public virtual ICollection<Employees> Employees { get; set; } = new List<Employees>();
+        public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

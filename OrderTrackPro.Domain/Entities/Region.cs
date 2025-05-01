@@ -12,6 +12,6 @@ namespace OrderTrackPro.Domain.Entities
 
         public string RegionDescription { get; set; }
 
-        public virtual ICollection<Territories> Territories { get; set; } = new List<Territories>();
+        public virtual ICollection<Territory> Territories { get; set; } = new List<Territory>();
     }
 }

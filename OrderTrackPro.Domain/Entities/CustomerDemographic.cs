@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace OrderTrackPro.Domain.Entities
 {
-    public class EmployeeTerritories
+    public class CustomerDemographic
     {
-        public int EmployeeId { get; set; }
+        public string CustomerTypeId { get; set; }
 
-        public int TerritoryId { get; set; }
+        public string CustomerDesc { get; set; }
+
+ 
     }
 }

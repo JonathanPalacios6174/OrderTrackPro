@@ -3,6 +3,7 @@ namespace OrderTrackPro.Infrastructure.Interface
 {
     public interface IOrderRepository
     {
-         Task<List<Orders>> GetOrdersAsync();
+         Task<List<Order>> GetOrdersAsync();
+
     }
 }

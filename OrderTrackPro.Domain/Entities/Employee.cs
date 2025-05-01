@@ -1,6 +1,6 @@
 ﻿namespace OrderTrackPro.Domain.Entities
 {
-    public class Employees
+    public class Employee
     {
         public int EmployeeId { get; set; }
 
@@ -38,12 +38,12 @@
 
         public string PhotoPath { get; set; }
 
-        public virtual ICollection<Employees> InverseReportsToNavigation { get; set; } = new List<Employees>();
+        public virtual ICollection<Employee> InverseReportsToNavigation { get; set; } = new List<Employee>();
 
-        public virtual ICollection<Orders> Orders { get; set; } = new List<Orders>();
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
-        public virtual Employees ReportsToNavigation { get; set; }
+        public virtual Employee ReportsToNavigation { get; set; }
 
-        public virtual ICollection<Territories> Territories { get; set; } = new List<Territories>();
+        public virtual ICollection<Territory> Territories { get; set; } = new List<Territory>();
     }
 }

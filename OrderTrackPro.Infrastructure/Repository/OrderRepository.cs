@@ -10,7 +10,7 @@ namespace OrderTrackPro.Infrastructure.Repository
             _context = context;
         }
 
-        public async Task<List<Orders>> GetOrdersAsync()
+        public async Task<List<Order>> GetOrdersAsync()
         {
             try
             {

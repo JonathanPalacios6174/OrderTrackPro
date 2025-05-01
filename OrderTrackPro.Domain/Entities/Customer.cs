@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace OrderTrackPro.Domain.Entities
 {
-    public class Suppliers
+    public class Customer
     {
-        public int SupplierId { get; set; }
+        public string CustomerId { get; set; }
 
         public string CompanyName { get; set; }
 
@@ -30,8 +30,11 @@ namespace OrderTrackPro.Domain.Entities
 
         public string Fax { get; set; }
 
-        public string HomePage { get; set; }
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
-        public virtual ICollection<Products> Products { get; set; } = new List<Products>();
+       
+
+
+
     }
 }

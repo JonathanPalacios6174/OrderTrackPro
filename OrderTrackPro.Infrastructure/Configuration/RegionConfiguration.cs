@@ -5,20 +5,18 @@
 
 public class RegionConfiguration : IEntityTypeConfiguration<Region>
 {
-    public void Configure(EntityTypeBuilder<Region> builder)
+    public void Configure(EntityTypeBuilder<Region> entity)
     {
-        builder.HasKey(e => e.RegionId)
-               .IsClustered(false);
+        entity.HasKey(e => e.RegionId).IsClustered(false);
 
-        builder.ToTable("Region");
+        entity.ToTable("Region");
 
-        builder.Property(e => e.RegionId)
-               .HasColumnName("RegionID")
-               .ValueGeneratedNever();
-
-        builder.Property(e => e.RegionDescription)
-               .IsRequired()
-               .HasMaxLength(50)
-               .IsFixedLength();
+        entity.Property(e => e.RegionId)
+            .ValueGeneratedNever()
+            .HasColumnName("RegionID");
+        entity.Property(e => e.RegionDescription)
+            .IsRequired()
+            .HasMaxLength(50)
+            .IsFixedLength();
     }
 }
