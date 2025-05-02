@@ -1,5 +1,4 @@
 ﻿
-
 namespace OrderTrackPro.Infrastructure.Configuration;
 
  public class CategoryConfiguration: IEntityTypeConfiguration<Category> 

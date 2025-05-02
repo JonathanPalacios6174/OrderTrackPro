@@ -1,5 +1,4 @@
-﻿using Microsoft.Identity.Client;
-using OrderTrackPro.Application.DTOs;
+﻿using OrderTrackPro.Application.DTOs;
 using OrderTrackPro.Application.Interfaces;
 using OrderTrackPro.Domain.Entities;
 using OrderTrackPro.Infrastructure.Interface;   

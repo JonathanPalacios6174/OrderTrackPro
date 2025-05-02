@@ -1,6 +1,4 @@
 ﻿
-using Microsoft.EntityFrameworkCore;
-
 namespace OrderTrackPro.Infrastructure.Interface
 {
     public interface IOrderRepository

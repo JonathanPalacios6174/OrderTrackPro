@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackPro.Domain", "Ord
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackPro.Infrastructure", "OrderTrackPro.Infrastructure\OrderTrackPro.Infrastructure.csproj", "{03E92878-7A10-4D58-8B63-C78067E8DC02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{FF4BCCDA-1C5C-4698-9D62-C6294F029B58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{03E92878-7A10-4D58-8B63-C78067E8DC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03E92878-7A10-4D58-8B63-C78067E8DC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03E92878-7A10-4D58-8B63-C78067E8DC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4BCCDA-1C5C-4698-9D62-C6294F029B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4BCCDA-1C5C-4698-9D62-C6294F029B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4BCCDA-1C5C-4698-9D62-C6294F029B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4BCCDA-1C5C-4698-9D62-C6294F029B58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{28B6AC5E-8282-46EB-A486-64E52EC5017B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{6BCDC71E-A77D-42AD-A899-86FA0D53C64E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{03E92878-7A10-4D58-8B63-C78067E8DC02} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FF4BCCDA-1C5C-4698-9D62-C6294F029B58} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F22971D-5142-4B89-BB7B-688B67E9A0B7}
