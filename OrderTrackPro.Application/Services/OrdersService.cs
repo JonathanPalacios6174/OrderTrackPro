@@ -77,26 +77,40 @@ namespace OrderTrackPro.Application.Services
                 return 0;
             }
 
-            order.CustomerId = orderDTO.CustomerId;
-            order.EmployeeId = orderDTO.EmployeeId;
-            order.OrderDate = orderDTO.OrderDate;
-            order.RequiredDate = orderDTO.RequiredDate;
-            order.ShippedDate = orderDTO.ShippedDate;
-            order.ShipVia = orderDTO.ShipVia;
-            order.Freight = orderDTO.Freight;
-            order.ShipName = orderDTO.ShipName;
-            order.ShipAddress = orderDTO.ShipAddress;
-            order.ShipCity = orderDTO.ShipCity;
-            order.ShipRegion = orderDTO.ShipRegion;
-            order.ShipPostalCode = orderDTO.ShipPostalCode;
-            order.ShipCountry = orderDTO.ShipCountry;
+            //order.CustomerId = orderDTO.CustomerId;
+            order.CustomerId = string.IsNullOrWhiteSpace(orderDTO.CustomerId) ? order.CustomerId : orderDTO.CustomerId;
+            order.EmployeeId = orderDTO.EmployeeId.HasValue ? orderDTO.EmployeeId : order.EmployeeId;
+            order.OrderDate = orderDTO.OrderDate.HasValue ? orderDTO.OrderDate : order.OrderDate;
+            order.RequiredDate = orderDTO.RequiredDate.HasValue ? orderDTO.RequiredDate : order.RequiredDate;
+            order.ShippedDate = orderDTO.ShippedDate.HasValue ? orderDTO.ShippedDate : order.ShippedDate;
+            order.ShipVia = orderDTO.ShipVia.HasValue ? orderDTO.ShipVia : order.ShipVia;
+            order.Freight = orderDTO.Freight.HasValue ? orderDTO.Freight : order.Freight;
+            order.ShipName = string.IsNullOrWhiteSpace(orderDTO.ShipName) ? order.ShipName: orderDTO.ShipName;
+            order.ShipAddress = string.IsNullOrWhiteSpace(orderDTO.ShipAddress) ? order.ShipAddress : orderDTO.ShipAddress;
+            order.ShipCity = string.IsNullOrWhiteSpace(orderDTO.ShipCity) ? order.ShipCity : orderDTO.ShipCity;
+            order.ShipRegion = string.IsNullOrWhiteSpace(orderDTO.ShipRegion) ? order.ShipRegion : orderDTO.ShipRegion;
+            order.ShipPostalCode = string.IsNullOrWhiteSpace(orderDTO.ShipPostalCode) ? order.ShipPostalCode : orderDTO.ShipPostalCode;
+            order.ShipCountry = string.IsNullOrWhiteSpace(orderDTO.ShipCountry) ? order.ShipCountry : orderDTO.ShipCountry;
 
-            department.Name = string.IsNullOrWhiteSpace(departmentDto.Name) ? department.Name : departmentDto.Name;
-            department.GroupName = string.IsNullOrWhiteSpace(departmentDto.GroupName) ? department.GroupName : departmentDto.GroupName;
+           
 
             return await _orderRepository.UpdateOrder(order);
         }
 
-        
+        public async Task<int> DeleteOrder(OrderDTO orderDTO)
+        {
+            var order = await _orderRepository.GetOrderById(orderDTO.OrderId);
+
+            if (order == null)
+            {
+                return 0;
+            }
+            var result = await _orderRepository.DeleteOrder(order);
+            return result;
+
+        }
+
+
+
     }
 }

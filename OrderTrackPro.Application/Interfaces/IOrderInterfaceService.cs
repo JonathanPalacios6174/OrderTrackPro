@@ -8,5 +8,9 @@ namespace OrderTrackPro.Application.Interfaces
         Task<IEnumerable<OrderDTO>> GetOrdersAsync();
 
         Task<int> CreateOrder(OrderDTO order);
+
+        Task<int> UpdateOrder(OrderDTO orderDTO);
+
+        Task<int> DeleteOrder(OrderDTO orderDTO);
     }
 }

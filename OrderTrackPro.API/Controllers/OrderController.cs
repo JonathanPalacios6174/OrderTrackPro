@@ -27,5 +27,20 @@ namespace OrderTrackPro.API.Controllers
         {
             return Ok(await _orderInterfaceService.CreateOrder(orderDTO));
         }
+
+        [HttpPut("Update")]
+        public async Task<IActionResult> UpdateOrder(OrderDTO orderDTO)
+        {
+            return Ok(await _orderInterfaceService.UpdateOrder(orderDTO));
+        }
+
+        [HttpDelete("Delete")]
+
+        public async Task<IActionResult> DeleteOrder(OrderDTO orderDTO)
+        {
+            
+            return Ok(await _orderInterfaceService.DeleteOrder(orderDTO));
+        }
+
     }
 }

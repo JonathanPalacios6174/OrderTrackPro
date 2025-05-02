@@ -44,7 +44,10 @@ namespace OrderTrackPro.Infrastructure.Repository
 
         public async Task<int> DeleteOrder(Order order)
         {
-            _context.Remove(order);
+            var orderDetails = await _context.OrderDetails. Where(od => od.OrderId == order.OrderId).ToListAsync();
+
+            _context.OrderDetails.RemoveRange(orderDetails);
+            _context.Orders.Remove(order);
 
             return await _context.SaveChangesAsync();
         }
